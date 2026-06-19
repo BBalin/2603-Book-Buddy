@@ -13,4 +13,12 @@ export async function getBooks() {
   }
 }
 
-getBooks();
+export async function getSingleBook(id) {
+  try {
+    const response = await fetch(`${API}/${id}`);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("There was an issue fetching book id from API", error);
+  }
+}
