@@ -15,8 +15,6 @@ export default function App() {
     loadAllBooks();
   }, []);
 
-  console.log("selectedBook", selectedBook);
-
   return (
     <main>
       <h1>Catalog</h1>

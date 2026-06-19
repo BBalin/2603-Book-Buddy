@@ -12,11 +12,13 @@ function SingleBook({ selectedBook }) {
     loadSingleBook();
   }, [selectedBook]);
 
-  console.log("book", book);
+  if (!book) {
+    return <p>Loading book...</p>;
+  }
 
   return (
-    <section className="single-book">
-      <figure>
+    <section className="book-details">
+      <figure className="book-img">
         <img src={book.coverimage} alt={book.title} />
       </figure>
       <article>

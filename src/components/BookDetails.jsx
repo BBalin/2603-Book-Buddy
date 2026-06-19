@@ -8,7 +8,7 @@ function BookDetails({ book, setSelectedBook }) {
       </figure>
       <article>
         <h1 onClick={() => setSelectedBook(book.id)}>{book.title}</h1>
-        <h2 className="author">{book.author}</h2>
+        <h2>{book.author}</h2>
         <p>{book.description}</p>
       </article>
     </li>
