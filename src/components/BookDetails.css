@@ -6,8 +6,11 @@
   padding: 0.5rem;
 }
 
-.book-img {
+li.book-details figure {
   height: 6lh;
+}
+
+.book-img {
   display: flex;
   justify-content: center;
   align-items: center;

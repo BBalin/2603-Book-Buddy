@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import BookList from "./components/BookList";
 import { getBooks } from "./API/books";
+import SingleBook from "./components/SingleBook";
 
 export default function App() {
   const [books, setBooks] = useState([]);
+  const [selectedBook, setSelectedBook] = useState(null);
 
   useEffect(() => {
     async function loadAllBooks() {
@@ -13,11 +15,16 @@ export default function App() {
     loadAllBooks();
   }, []);
 
-  console.log("books", books);
+  console.log("selectedBook", selectedBook);
+
   return (
     <main>
       <h1>Catalog</h1>
-      <BookList books={books} />
+      {selectedBook ? (
+        <SingleBook selectedBook={selectedBook} />
+      ) : (
+        <BookList books={books} setSelectedBook={setSelectedBook} />
+      )}
     </main>
   );
 }
