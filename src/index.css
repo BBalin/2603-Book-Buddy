@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 75ch;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+main {
+  display: grid;
+  gap: 0.25rem;
+}

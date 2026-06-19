@@ -1,0 +1,18 @@
+.book-details {
+  display: grid;
+  grid-template-columns: 10ch 1fr;
+  gap: 1ch;
+  background-color: lightgray;
+  padding: 0.5rem;
+}
+
+.book-img {
+  height: 6lh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.author {
+  font-weight: 700;
+}
