@@ -6,7 +6,6 @@ export async function getBooks() {
   try {
     const response = await fetch(API);
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error("There was an issue fetching books from the API", error);

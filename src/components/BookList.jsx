@@ -1,11 +1,17 @@
 import "./BookList.css";
 import BookDetails from "./BookDetails";
 
-function BookList({ books }) {
+function BookList({ books, setSelectedBook }) {
   return (
     <ul className="book-list">
       {books.map((book) => {
-        return <BookDetails key={book.id} book={book} />;
+        return (
+          <BookDetails
+            key={book.id}
+            book={book}
+            setSelectedBook={setSelectedBook}
+          />
+        );
       })}
     </ul>
   );

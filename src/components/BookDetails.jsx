@@ -1,14 +1,14 @@
 import "./BookDetails.css";
 
-function BookDetails({ book }) {
+function BookDetails({ book, setSelectedBook }) {
   return (
     <li className="book-details">
       <figure className="book-img">
-        <img src={book.coverImage} alt={book.title} />
+        <img src={book.coverimage} alt={book.title} />
       </figure>
       <article>
-        <h1>{book.title}</h1>
-        <h2 className="author">{book.author}</h2>
+        <h1 onClick={() => setSelectedBook(book.id)}>{book.title}</h1>
+        <h2>{book.author}</h2>
         <p>{book.description}</p>
       </article>
     </li>
