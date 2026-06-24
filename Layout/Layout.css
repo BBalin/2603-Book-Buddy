@@ -1,0 +1,29 @@
+#book-logo {
+  height: 1.5lh;
+}
+
+.header {
+  display: flex;
+  gap: 1ch;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #ddd;
+}
+
+.header figure {
+  display: flex;
+  justify-content: space-between;
+  gap: 1ch;
+}
+
+.header p {
+  color: teal;
+  font-weight: bold;
+}
+
+.header .nav-icon {
+  color: teal;
+  font-weight: bold;
+}

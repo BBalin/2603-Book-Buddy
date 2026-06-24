@@ -3,7 +3,3 @@
   gap: 1rem;
   list-style: none;
 }
-
-#search-bar {
-  grid-template-columns: 1fr 10ch;
-}

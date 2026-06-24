@@ -1,5 +1,6 @@
 import { useAuth } from "../../context/AuthContext";
 import "./auth.css";
+import { NavLink } from "react-router";
 
 function LoginPage() {
   const { login } = useAuth();
@@ -36,7 +37,7 @@ function LoginPage() {
         </label>
         <button>Login</button>
       </form>
-      <a href="">Need an account? Register here.</a>
+      <NavLink to="/users/register">Need an account? Register here.</NavLink>
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import "./BookList.css";
+import "../Books/BookList.css";
 import BookDetails from "./BookDetails";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ function BookList({ books, setSelectedBook }) {
       </p>
 
       {filteredBooks.length ? (
-        <ul>
+        <ul className="book-list">
           {filteredBooks.map((book) => {
             return (
               <BookDetails
@@ -46,7 +46,7 @@ function BookList({ books, setSelectedBook }) {
           })}
         </ul>
       ) : (
-        <p>No books match "{searchTerm}"</p>
+        <p>No books match &quot;{searchTerm}&quot;</p>
       )}
     </section>
   );
