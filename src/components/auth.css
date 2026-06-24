@@ -1,0 +1,11 @@
+section,
+form,
+label {
+  display: grid;
+  gap: 0.25rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
