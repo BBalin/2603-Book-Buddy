@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import BookList from "./components/BookList";
+import BookList from "../src/Books/BookList";
 import { getBooks } from "./API/books";
-import SingleBook from "./components/SingleBook";
+import SingleBook from "./Books/SingleBook";
 import AuthPanel from "./components/AuthPanel";
-import LoginPage from "./components/LoginPage";
+import { Routes, Route } from "react-router";
 
 export default function App() {
   const [books, setBooks] = useState([]);
@@ -19,8 +19,7 @@ export default function App() {
 
   return (
     <main>
-      <h1>Catalog</h1>
-      <AuthPanel />
+      {/* <AuthPanel /> */}
       {selectedBook ? (
         <SingleBook selectedBook={selectedBook} />
       ) : (

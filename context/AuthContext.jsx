@@ -4,21 +4,23 @@ import { register, loginUser } from "../src/API/books";
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem("token") || null);
 
   async function login(credentials) {
     const result = await loginUser(credentials);
     setToken(result.token);
+    localStorage.setItem("token", result.token);
   }
 
   async function signup(credentials) {
     const result = await register(credentials);
     setToken(result);
-    console.log(token);
+    localStorage.setItem("token", result);
   }
 
   function logout() {
     setToken(null);
+    localStorage.removeItem("token");
   }
 
   const value = {
