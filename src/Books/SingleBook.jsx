@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { getSingleBook } from "../API/books";
+import { getSingleBook, reserveBook } from "../API/books";
+import { useAuth } from "../../context/AuthContext";
 
 function SingleBook({ selectedBook }) {
+  const { token } = useAuth();
   const [book, setBook] = useState(null);
 
   useEffect(() => {
@@ -16,6 +18,10 @@ function SingleBook({ selectedBook }) {
     return <p>Loading book...</p>;
   }
 
+  async function handleReservation() {
+    await reserveBook(token, book.id);
+  }
+
   return (
     <section className="book-details">
       <figure className="book-img">
@@ -25,6 +31,13 @@ function SingleBook({ selectedBook }) {
         <h1>{book.title}</h1>
         <h2>{book.author}</h2>
         <p>{book.description}</p>
+        {token ? (
+          <button className="reserve-button" onClick={handleReservation}>
+            Reserve this Book
+          </button>
+        ) : (
+          <p>Log in to reserve books.</p>
+        )}
       </article>
     </section>
   );

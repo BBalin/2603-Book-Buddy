@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { NavLink } from "react-router";
 
 function RegisterForm() {
   const { signup } = useAuth();
@@ -64,6 +65,7 @@ function RegisterForm() {
         />
       </label>
       <button>Create Account</button>
+      <NavLink to="/users/login">Already have an account? Log in here.</NavLink>
     </form>
   );
 }

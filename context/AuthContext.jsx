@@ -8,7 +8,10 @@ export function AuthProvider({ children }) {
 
   async function login(credentials) {
     const result = await loginUser(credentials);
-    setToken(result.token);
+    console.log(result);
+    const newToken = setToken(result.token);
+    console.log(newToken);
+
     localStorage.setItem("token", result.token);
   }
 

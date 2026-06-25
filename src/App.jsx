@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router";
 import Layout from "../Layout/Layout";
 import LoginPage from "./components/LoginPage";
 import RegisterForm from "./components/RegisterForm";
+import AccountPage from "./components/AccountPage";
 
 export default function App() {
   const [books, setBooks] = useState([]);
@@ -35,6 +36,7 @@ export default function App() {
           />
           <Route path="/users/login" element={<LoginPage />} />
           <Route path="/users/register" element={<RegisterForm />} />
+          <Route path="/users/me" element={<AccountPage />} />
         </Route>
       </Routes>
     </>
